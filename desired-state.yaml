@@ -1,0 +1,21 @@
+settings:
+  kubeContext: "dev"
+
+metadata:
+  description: "hello world app"
+
+
+apps:
+  hello-world-dev:
+    namespace: dev
+    enabled: true
+    chart: "../helmchart-hello-world/"
+    valuesFile: "./helmchart-hello-world/values.yaml"
+    version: "0.1.1"
+
+  hello-world-staging:
+    namespace: dev
+    enabled: true
+    chart: "./helmchart-hello-world/"
+    valuesFile: "./helmchart-hello-world/values.yaml"
+    version: "0.1.0"
